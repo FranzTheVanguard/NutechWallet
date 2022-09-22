@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="loginEditText" format="reference"/>
+    <attr name="loginBackground" format="reference"/>
+    <attr name="editTextMenu" format="reference"/>
+    <attr name="gradient_start" format="reference"/>
+    <attr name="gradient_end" format="reference"/>
+</resources>
