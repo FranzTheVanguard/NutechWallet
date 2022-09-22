@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.fourrunstudios.nutechwallet.viewmodels.MainActivityViewModel" />
+        <variable
+            name="activity"
+            type="com.fourrunstudios.nutechwallet.activities.MainActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.MainActivity"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_edittext"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_person" />
+
+                <EditText
+                    android:id="@+id/login_email"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewmodel.email}"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter email"
+                    android:inputType="textEmailAddress"
+                    android:nextFocusDown="@id/login_password" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_edittext"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_lock" />
+
+                <EditText
+                    android:id="@+id/login_password"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewmodel.password}"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Password"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/submit"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/gotoReg"
+                style="?android:borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Register"
+                android:textAllCaps="false"
+                android:padding="10dp"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
