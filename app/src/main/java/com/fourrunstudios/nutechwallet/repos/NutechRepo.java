@@ -198,7 +198,7 @@ public class NutechRepo {
                 if(response.isSuccessful()){
                     switch (response.body().getStatus()){
                         case 0:
-
+                            break;
                     }
                 }
             }
