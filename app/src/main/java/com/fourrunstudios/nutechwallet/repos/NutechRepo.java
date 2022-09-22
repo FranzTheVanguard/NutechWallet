@@ -1,20 +1,19 @@
 package com.fourrunstudios.nutechwallet.repos;
 
 import android.util.Log;
-import android.util.Patterns;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.fourrunstudios.nutechwallet.api.APIManager;
 import com.fourrunstudios.nutechwallet.api.APIResponse;
+import com.fourrunstudios.nutechwallet.api.APIResponseHistory;
 import com.fourrunstudios.nutechwallet.api.HistoryData;
 import com.fourrunstudios.nutechwallet.api.NutechAPI;
 import com.fourrunstudios.nutechwallet.api.NutechData;
 
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -188,28 +187,30 @@ public class NutechRepo {
         });
     }
 
-    public LiveData<List<HistoryData>> getHistory() {
+    public LiveData<List<HistoryData>> getLiveHistory() {
         if(historyData==null){
             historyData = new MutableLiveData<>();
         }
-        api.getHistory(getToken()).enqueue(new Callback<APIResponse>() {
+        api.getHistory("Bearer "+getToken()).enqueue(new Callback<APIResponseHistory>() {
             @Override
-            public void onResponse(Call<APIResponse> call, Response<APIResponse> response) {
+            public void onResponse(Call<APIResponseHistory> call, Response<APIResponseHistory> response) {
                 if(response.isSuccessful()){
                     switch (response.body().getStatus()){
                         case 0:
+                            historyData.setValue(response.body().getData());
+                            break;
+                        case 108:
                             break;
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<APIResponse> call, Throwable t) {
+            public void onFailure(Call<APIResponseHistory> call, Throwable t) {
 
             }
         });
         return historyData;
-
     }
 
     public LiveData<Integer> getLiveBalance() {
@@ -262,5 +263,11 @@ public class NutechRepo {
 
     public void resetToken() {
         token=null;
+    }
+    public LiveData<List<HistoryData>> getHistory(){
+        if(historyData==null){
+            historyData = new MutableLiveData<>();
+        }
+        return historyData;
     }
 }

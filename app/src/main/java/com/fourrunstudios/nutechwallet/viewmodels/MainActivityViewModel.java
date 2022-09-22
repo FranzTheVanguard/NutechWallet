@@ -1,16 +1,12 @@
 package com.fourrunstudios.nutechwallet.viewmodels;
 
 import android.content.Context;
-import android.util.Log;
 import android.util.Patterns;
 import android.widget.Toast;
 
-import androidx.databinding.Bindable;
-import androidx.databinding.Observable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.fourrunstudios.nutechwallet.activities.MainActivity;
 import com.fourrunstudios.nutechwallet.repos.NutechRepo;
 
 public class MainActivityViewModel extends ViewModel implements EmailPassValidator{

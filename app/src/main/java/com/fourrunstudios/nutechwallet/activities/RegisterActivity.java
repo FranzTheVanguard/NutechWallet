@@ -1,18 +1,16 @@
 package com.fourrunstudios.nutechwallet.activities;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
-
 import com.fourrunstudios.nutechwallet.R;
 import com.fourrunstudios.nutechwallet.databinding.ActivityRegisterBinding;
-import com.fourrunstudios.nutechwallet.viewmodels.MainActivityViewModel;
 import com.fourrunstudios.nutechwallet.viewmodels.RegisterActivityViewModel;
 
 public class RegisterActivity extends AppCompatActivity {

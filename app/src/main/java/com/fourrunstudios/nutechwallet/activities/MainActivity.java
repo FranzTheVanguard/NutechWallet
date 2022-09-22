@@ -1,16 +1,16 @@
 package com.fourrunstudios.nutechwallet.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.bumptech.glide.Glide;
 import com.fourrunstudios.nutechwallet.R;
 import com.fourrunstudios.nutechwallet.databinding.ActivityMainBinding;
 import com.fourrunstudios.nutechwallet.viewmodels.MainActivityViewModel;
@@ -32,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Submit Button ", view.toString());
             tryLogin();
         });
-
+        Glide.with(this)
+                .load("https://i.imgur.com/dJ9qABb.png")
+                .fitCenter()
+                .into(binding.logo);
     }
 
     @Override

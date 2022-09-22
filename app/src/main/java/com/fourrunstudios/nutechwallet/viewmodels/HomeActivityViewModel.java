@@ -3,8 +3,11 @@ package com.fourrunstudios.nutechwallet.viewmodels;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.fourrunstudios.nutechwallet.api.HistoryData;
 import com.fourrunstudios.nutechwallet.api.NutechData;
 import com.fourrunstudios.nutechwallet.repos.NutechRepo;
+
+import java.util.List;
 
 public class HomeActivityViewModel extends ViewModel {
     private NutechRepo repo = NutechRepo.getInstance();
@@ -28,7 +31,10 @@ public class HomeActivityViewModel extends ViewModel {
         return repo.getProfile();
     }
 
-    public void loadHistory() {
-        repo.getHistory();
+    public LiveData<List<HistoryData>> loadHistory() {
+        return repo.getLiveHistory();
+    }
+    public LiveData<List<HistoryData>> getHistory() {
+        return repo.getHistory();
     }
 }

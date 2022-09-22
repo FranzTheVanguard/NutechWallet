@@ -1,7 +1,6 @@
 package com.fourrunstudios.nutechwallet.repos;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
 import com.fourrunstudios.nutechwallet.api.NutechData;
 

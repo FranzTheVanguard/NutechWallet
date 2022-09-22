@@ -45,7 +45,7 @@ public interface NutechAPI {
             @Field("amount") int amount);
 
     @GET("transactionHistory")
-    Call<APIResponse> getHistory(@Header("Authorization") String token);
+    Call<APIResponseHistory> getHistory(@Header("Authorization") String token);
 
     @GET("balance")
     Call<APIResponse> getBalance(@Header("Authorization") String token);

@@ -28,10 +28,17 @@ public class TopUpActivityViewModel extends ViewModel {
     public void setAmount(int amount) {
         this.amount = amount;
     }
-    public void topUp(int amount){
+    public void topUp(){
         repo.topUp(amount);
     }
     public LiveData<Integer> getLiveBalance(){
         return repo.getLiveBalance();
+    }
+
+    public boolean validateAmount() {
+        if(amount<10000){
+            return false;
+        }
+        return true;
     }
 }

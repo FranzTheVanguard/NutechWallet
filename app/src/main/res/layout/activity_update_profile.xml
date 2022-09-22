@@ -18,7 +18,7 @@
             android:id="@+id/update_name_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="name}"
+            android:text="name"
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
@@ -40,7 +40,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/teal_200"
+                android:background="?android:attr/colorPrimary"
                 android:orientation="vertical"
                 android:gravity="center">
                 <TextView
@@ -53,9 +53,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@color/white"
+                    android:background="?attr/editTextMenu"
                     android:gravity="center"
                     android:inputType="textPersonName"
+                    android:maxLength="10"
+                    android:nextFocusDown="@id/update_lastname"
+
                     />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -75,7 +78,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/teal_200"
+                android:background="?android:attr/colorPrimary"
                 android:orientation="vertical"
                 android:gravity="center">
                 <TextView
@@ -88,9 +91,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@color/white"
+                    android:background="?attr/editTextMenu"
                     android:gravity="center"
                     android:inputType="textPersonName"
+                    android:maxLength="10"
+                    android:nextFocusDown="@id/update_button"
                     />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

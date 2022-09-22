@@ -1,21 +1,24 @@
 package com.fourrunstudios.nutechwallet.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.fourrunstudios.nutechwallet.R;
+import com.fourrunstudios.nutechwallet.adapter.RecyclerViewAdapter;
+import com.fourrunstudios.nutechwallet.api.HistoryData;
 import com.fourrunstudios.nutechwallet.api.NutechData;
 import com.fourrunstudios.nutechwallet.databinding.ActivityHomeBinding;
 import com.fourrunstudios.nutechwallet.viewmodels.HomeActivityViewModel;
-import com.fourrunstudios.nutechwallet.viewmodels.RegisterActivityViewModel;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
@@ -37,6 +40,16 @@ public class HomeActivity extends AppCompatActivity {
         binding.historyCardview.setOnClickListener(view -> {
             loadHistory();
         });
+        Glide.with(this)
+                .load("https://i.imgur.com/3TV39Qm.png")
+                .into(binding.transferImage);
+        Glide.with(this)
+                .load("https://i.imgur.com/acjPLq6.png")
+                .into(binding.topupImage);
+        Glide.with(this)
+                .load("https://i.imgur.com/tbed3ES.png")
+                .apply(new RequestOptions().override(60, 60))
+                .into(binding.updateProfile);
     }
     private void viewModelSetup() {
         if(viewmodel == null){
@@ -64,6 +77,19 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
     private void loadHistory(){
-        viewmodel.loadHistory();
+        if(!viewmodel.loadHistory().hasActiveObservers()){
+            viewmodel.getHistory().observe(this, new Observer<List<HistoryData>>() {
+                @Override
+                public void onChanged(List<HistoryData> historyData) {
+                    setupAdapter(historyData);
+                }
+            });
+        }
+    }
+
+    private void setupAdapter(List<HistoryData> historyList) {
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(historyList);
+        binding.historyView.setAdapter(adapter);
+        if(binding.historyView.getLayoutManager()==null) binding.historyView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

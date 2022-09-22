@@ -1,18 +1,16 @@
 package com.fourrunstudios.nutechwallet.activities;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.os.Bundle;
-import android.widget.Toast;
-
 import com.fourrunstudios.nutechwallet.R;
 import com.fourrunstudios.nutechwallet.api.NutechData;
-import com.fourrunstudios.nutechwallet.databinding.ActivityHomeBinding;
 import com.fourrunstudios.nutechwallet.databinding.ActivityUpdateProfileBinding;
-import com.fourrunstudios.nutechwallet.viewmodels.HomeActivityViewModel;
 import com.fourrunstudios.nutechwallet.viewmodels.UpdateProfileActivityViewModel;
 
 public class UpdateProfileActivity extends AppCompatActivity {

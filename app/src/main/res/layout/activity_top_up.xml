@@ -25,6 +25,90 @@
             android:textSize="20sp"
             android:text="Balance"
             />
+        <GridLayout
+            android:id="@+id/grid_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rowCount="3"
+            android:columnCount="3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topup_balance"
+            >
+            <Button
+                android:id="@+id/topup10k"
+                android:hint="10000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.000"
+                android:layout_margin="10dp"
+            />
+            <Button
+                android:id="@+id/topup20k"
+                android:hint="20000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20.000"
+                android:layout_margin="10dp"
+                />
+            <Button
+                android:id="@+id/topup50k"
+                android:hint="50000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50.000"
+                android:layout_margin="10dp"
+                />
+            <Button
+                android:id="@+id/topup100k"
+                android:hint="100000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100.000"
+                android:layout_margin="10dp"
+                />
+            <Button
+                android:id="@+id/topup150k"
+                android:hint="150000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="150.000"
+                android:layout_margin="10dp"
+                />
+            <Button
+                android:id="@+id/topup200k"
+                android:hint="200000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200.000"
+                android:layout_margin="10dp"
+                />
+            <Button
+                android:id="@+id/topup250k"
+                android:hint="250000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="250.000"
+                android:layout_margin="10dp"
+                />
+            <Button
+                android:id="@+id/topup300k"
+                android:hint="300000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="300.000"
+                android:layout_margin="10dp"
+                />
+            <Button
+                android:id="@+id/topup500k"
+                android:hint="500000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500.000"
+                android:layout_margin="10dp"
+                />
+
+        </GridLayout>
         <androidx.cardview.widget.CardView
             android:id="@+id/amount_cardview"
             android:layout_width="match_parent"
@@ -33,12 +117,15 @@
             android:layout_margin="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/topup_balance">
+            app:layout_constraintTop_toBottomOf="@id/grid_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.1"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/teal_200"
+                android:background="?android:attr/colorPrimary"
                 android:orientation="vertical">
 
                 <TextView
@@ -54,7 +141,7 @@
                     android:layout_height="50dp"
                     android:gravity="center"
                     android:inputType="number"
-                    android:background="@color/white"
+                    android:background="?attr/editTextMenu"
                     android:layout_margin="5dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

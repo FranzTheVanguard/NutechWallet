@@ -3,6 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <solid android:color="@color/teal_200"/>
+    <solid android:color="?attr/loginEditText"/>
     <corners android:radius="10dp"/>
 </shape>
