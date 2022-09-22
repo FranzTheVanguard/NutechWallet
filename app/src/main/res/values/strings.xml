@@ -10,7 +10,6 @@
     <string name="_300_000">300.000</string>
     <string name="_500_000">500.000</string>
     <string name="or_enter_a_custom_amount">Or enter a custom amount</string>
-    <string name="top_up">Top up</string>
     <string name="firstname_lastname">Firstname Lastname</string>
     <string name="transfer">Transfer</string>
     <string name="top_up">Top up</string>
@@ -29,10 +28,6 @@
     <string name="john">John</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
-    <string name="register">Register</string>
-    <string name="balance">Balance</string>
-    <string name="amount">Amount</string>
-    <string name="transfer">Transfer</string>
     <string name="name">name</string>
     <string name="enter_your_first_name">Enter your first name</string>
     <string name="enter_your_last_name">Enter your last name</string>
