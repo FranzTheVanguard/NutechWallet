@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
             goToRegister();
         });
         binding.submit.setOnClickListener(view -> {
-            Log.d("Submit Button ", view.toString());
             tryLogin();
         });
         Glide.with(this)
@@ -54,13 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void tryLogin(){
         if(viewmodel.validateLogin(this)){
-            Log.d("Login"+counter, "");
             viewmodel.login();
             counter++;
             viewmodel.getLiveToken().observe(this, new Observer<String>() {
                 @Override
                 public void onChanged(String s) {
-                    Log.d("Login "+counter, "Token update, go to activity "+s);
                     viewmodel.getLiveToken().removeObservers(activity);
                     startActivity(new Intent(activity, HomeActivity.class));
                 }
@@ -68,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             viewmodel.getMessage().observe(this, new Observer<String>() {
                 @Override
                 public void onChanged(String s) {
-                    Log.d("Login"+counter, "message changed in main "+s);
                     Toast.makeText(activity, s, Toast.LENGTH_SHORT).show();
                     viewmodel.getMessage().removeObservers(activity);
                 }

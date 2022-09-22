@@ -38,7 +38,6 @@ public class TransferActivity extends AppCompatActivity implements ConfirmationD
         viewmodel.getLiveBalance().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
-                Log.d("Balance in", "onChanged: updated to "+integer);
                 binding.transferBalance.setText("Balance : "+integer);
                 viewmodel.setBalance(integer);
             }

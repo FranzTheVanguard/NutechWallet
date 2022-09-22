@@ -23,7 +23,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.01"
             android:textSize="20sp"
-            android:text="Balance"
+            android:text="@string/balance"
             />
         <GridLayout
             android:id="@+id/grid_layout"
@@ -37,7 +37,6 @@
             >
             <Button
                 android:id="@+id/topup10k"
-                android:hint="10000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10.000"
@@ -45,66 +44,58 @@
             />
             <Button
                 android:id="@+id/topup20k"
-                android:hint="20000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="20.000"
+                android:text="@string/_20_000"
                 android:layout_margin="10dp"
                 />
             <Button
                 android:id="@+id/topup50k"
-                android:hint="50000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="50.000"
+                android:text="@string/_50_000"
                 android:layout_margin="10dp"
                 />
             <Button
                 android:id="@+id/topup100k"
-                android:hint="100000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="100.000"
+                android:text="@string/_100_000"
                 android:layout_margin="10dp"
                 />
             <Button
                 android:id="@+id/topup150k"
-                android:hint="150000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="150.000"
+                android:text="@string/_150_000"
                 android:layout_margin="10dp"
                 />
             <Button
                 android:id="@+id/topup200k"
-                android:hint="200000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="200.000"
+                android:text="@string/_200_000"
                 android:layout_margin="10dp"
                 />
             <Button
                 android:id="@+id/topup250k"
-                android:hint="250000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="250.000"
+                android:text="@string/_250_000"
                 android:layout_margin="10dp"
                 />
             <Button
                 android:id="@+id/topup300k"
-                android:hint="300000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="300.000"
+                android:text="@string/_300_000"
                 android:layout_margin="10dp"
                 />
             <Button
                 android:id="@+id/topup500k"
-                android:hint="500000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="500.000"
+                android:text="@string/_500_000"
                 android:layout_margin="10dp"
                 />
 
@@ -132,7 +123,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Or enter a custom amount"
+                    android:text="@string/or_enter_a_custom_amount"
                     android:textStyle="bold" />
 
                 <EditText
@@ -150,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Top up"
+            android:text="@string/top_up"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/amount_cardview"/>

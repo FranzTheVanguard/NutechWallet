@@ -38,13 +38,11 @@ public class RegisterActivity extends AppCompatActivity {
     }
     private void register(){
         if(viewmodel.validateReg(this)){
-            Log.d("Register"+counter, "");
             viewmodel.register();
             counter++;
             viewmodel.getRegistered().observe(this, new Observer<Boolean>() {
                 @Override
                 public void onChanged(Boolean aBoolean) {
-                    Log.d("register "+counter, "registered changed! "+aBoolean);
                     viewmodel.getRegistered().removeObservers(activity);
                     onBackPressed();
                 }
@@ -52,7 +50,6 @@ public class RegisterActivity extends AppCompatActivity {
             viewmodel.getMessage().observe(this, new Observer<String>() {
                 @Override
                 public void onChanged(String s) {
-                    Log.d("register "+counter, "message updated in register "+s);
                     Toast.makeText(activity, s, Toast.LENGTH_SHORT).show();
                     viewmodel.getMessage().removeObservers(activity);
                 }
